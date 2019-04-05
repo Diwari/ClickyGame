@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Kage",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/3/32/Kage_Portrait.png/revision/latest/scale-to-width-down/350?cb=20181217211219"
+  },
+  {
+    "id":2,
+    "name":"G",
+    "image":"https://vignette.wikia.nocookie.net/streetfighter/images/7/7e/Gclean.png/revision/latest/scale-to-width-down/350?cb=20180812160347"
+  },
+  {
+    "id":3,
+    "name": "M.Bison",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/1/17/Bisonrender.png/revision/latest?cb=20170728171523"
+  },
+  {
+    "id": 4,
+    "name": "Cammy",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/1/19/Cammyrender.png/revision/latest?cb=20170728163129"
+  },
+  {
+    "id": 5,
+    "name": "Chun-li",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/e/e3/Chunrender.png/revision/latest?cb=20170728163823"
+
+  },
+  {
+    "id": 6,
+    "name": "Gouki",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/2/2c/Akumarender.png/revision/latest?cb=20170728162459"
+  },
+  {
+    "id": 7,
+    "name": "Ryu",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/4/46/Ryurender.png/revision/latest?cb=20170728171704"
+  },
+  {
+    "id": 8,
+    "name": "Karin",
+    "image": "https://vignette.wikia.nocookie.net/streetfighter/images/c/c1/Karinrender.png/revision/latest?cb=201707281713060"
+  }
+]
