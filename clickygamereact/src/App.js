@@ -6,11 +6,11 @@ import Navbar from "./components/Navbar";
 import worldwarriors from"./worldwarriors.json"
 
 //shuffle function taken from stackoverflow
-function shuffle(array) {
-  let i = array.length - 1;
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
+
+function shuffleWarriors(array){
+  for (let i = array.length - 1; i > 0; i--){
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
@@ -22,7 +22,18 @@ class App extends Component {
     currentScore: 0,
     HighScore: 0,
     worldwarriors,
+    message: "",
+    clicked: [],
     
+  };
+
+  handleClick = id =>{
+    if (this.state.clicked.indexOf(id) === -1){
+      this.handleIncrement();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+    } else {
+      this.handleReset();
+    }
   };
     handleIncrement = () => {
        let newScore= this.state.currentScore + 1;
@@ -36,9 +47,18 @@ class App extends Component {
   
 
     };
+
+    handleReset = () =>{
+      this.setState({
+        currentScore: 0,
+        highScore: this.state.highScore,
+        message: " ",
+        clicked: []
+      })
+    }
     handleShuffle = () => {
-      let shuffleWarriors = shuffle(worldwarriors);
-      this.setState({ worldwarriors:shuffle });
+      let shuffleWarriors = shuffleWarriors(worldwarriors);
+      this.setState({ worldwarriors:shuffleWarriors });
     };
      
     
@@ -59,6 +79,8 @@ class App extends Component {
           image={warrior.image}
           handleIncrement={this.handleIncrement}
           handleShuffle={this.handleShuffle}
+          handleReset={this.handleReset}
+          handleClick={this.handleClick}
 
           />
         ))}
