@@ -3,19 +3,10 @@ import WarriorCard from "./components/WarriorCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Navbar from "./components/Navbar";
-import worldwarriors from"./worldwarriors.json"
+import worldwarriors from"./worldwarriors.json";
+
 
 //shuffle function taken from stackoverflow
-
-function shuffleWarriors(array){
-  for (let i = array.length - 1; i > 0; i--){
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-};
 
 class App extends Component {
   state = {
@@ -26,7 +17,16 @@ class App extends Component {
     clicked: [],
     
   };
-
+      shuffleWarriors(array){
+        for (let i = array.length - 1; i > 0; i--){
+          let j = Math.floor(Math.random() * (i + 1));
+          let temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        return array;
+      };
+  
   handleClick = id =>{
     if (this.state.clicked.indexOf(id) === -1){
       this.handleIncrement();
@@ -55,9 +55,10 @@ class App extends Component {
         message: " ",
         clicked: []
       })
+      this.handleShuffle();
     }
     handleShuffle = () => {
-      let shuffleWarriors = shuffleWarriors(worldwarriors);
+      this.shuffleWarriors(worldwarriors);
       this.setState({ worldwarriors:shuffleWarriors });
     };
      
